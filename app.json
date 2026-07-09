@@ -7,9 +7,20 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "CrashSafe uses your location to tag your incident and photos.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "CrashSafe uses your location to tag your incident and photos.",
+        "NSCameraUsageDescription": "CrashSafe needs camera access to photograph vehicle damage and the scene.",
+        "NSPhotoLibraryUsageDescription": "CrashSafe saves incident photos to your photo library.",
+        "NSPhotoLibraryAddUsageDescription": "CrashSafe saves incident photos to your photo library.",
+        "NSMicrophoneUsageDescription": "CrashSafe requires microphone access when recording video of the scene.",
+        "NSFileProtectionKey": "NSFileProtectionComplete"
+      },
+      "bundleIdentifier": "com.crashsafe.app"
     },
     "android": {
+      "package": "com.crashsafe.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -20,6 +31,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-sharing",
+      "expo-secure-store"
+    ]
   }
 }
